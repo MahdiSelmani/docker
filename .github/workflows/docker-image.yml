@@ -13,12 +13,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file Dockerfile --tag test
 
     - name: Push to Local Registry
       env:
         DOCKER_REGISTRY: "192.168.1.169:5000"  # Use localhost for local testing
-        IMAGE_NAME: "my-image-name"
+        IMAGE_NAME: "test"
       run: |
-        docker tag my-image-name:$(date +%s) $DOCKER_REGISTRY/$IMAGE_NAME
+        docker tag test $DOCKER_REGISTRY/$IMAGE_NAME
         docker push $DOCKER_REGISTRY/$IMAGE_NAME
