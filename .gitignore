@@ -1,0 +1,7 @@
+node_modules
+# Ignorer les images et conteneurs temporaires
+*.tar
+*.log
+
+# Ignorer les dossiers temporaires de Docker, si utilisés
+.docker
