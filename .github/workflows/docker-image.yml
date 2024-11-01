@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # This won't run on your local Windows machine
+    runs-on: self-hosted  # Use your self-hosted runner
 
     steps:
     - uses: actions/checkout@v4
@@ -17,7 +17,7 @@ jobs:
 
     - name: Push to Local Registry
       env:
-        DOCKER_REGISTRY: "197.27.249.161:5000"  # Use localhost for local testing
+        DOCKER_REGISTRY: "197.27.249.161:5000"  # Use your local registry IP
         IMAGE_NAME: "test"
       run: |
         docker tag test $DOCKER_REGISTRY/$IMAGE_NAME
