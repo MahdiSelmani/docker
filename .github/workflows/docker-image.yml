@@ -17,7 +17,7 @@ jobs:
 
     - name: Push to Local Registry
       env:
-        DOCKER_REGISTRY: "192.168.1.169:5000"  # Use localhost for local testing
+        DOCKER_REGISTRY: "197.27.249.161:5000"  # Use localhost for local testing
         IMAGE_NAME: "test"
       run: |
         docker tag test $DOCKER_REGISTRY/$IMAGE_NAME
